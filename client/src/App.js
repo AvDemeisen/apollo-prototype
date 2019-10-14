@@ -1,29 +1,17 @@
 import React from 'react';
-import ApolloClient, { gql } from 'apollo-boost';
+import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
+import AlbumList from './components/album-list/albumList';
 
 const client = new ApolloClient({
   uri: 'http://localhost:4000/graphql',
 });
 
-client
-  .query({
-    query: gql`
-      {
-        albums {
-          name
-        }
-      }
-    `
-  })
-  .then(result => console.log(result));
-
-
-
 const App = () => (
   <ApolloProvider client={client}>
     <div>
-      <h2>Albums</h2>
+      <h1>Apollo</h1>
+      <AlbumList />
     </div>
   </ApolloProvider>
 );
