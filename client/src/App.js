@@ -1,8 +1,8 @@
 import React from 'react';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
-import AlbumList from './components/album-list/AlbumList';
-import AlbumForm from './components/album-form/AlbumForm';
+import AlbumList from './components/album-list/albumList';
+import AlbumForm from './components/album-form/AlbumForm'
 import './App.scss'
 
 
