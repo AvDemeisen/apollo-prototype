@@ -1,6 +1,15 @@
 import { gql } from 'apollo-boost';
 
-const BOOKS_QUERY = gql`
+const ARTISTS_QUERY = gql`
+   {
+        artists {
+            name
+            id
+        }
+    }
+`
+
+const ALBUMS_QUERY = gql`
     {
         albums {
             name
@@ -11,4 +20,13 @@ const BOOKS_QUERY = gql`
     }
 `;
 
-export { BOOKS_QUERY };
+const ADD_ALBUM = gql`
+    mutation AddAlbum($name: String!, $genre: String!, $release: Number!, $artistId: ID!){
+        addAlbum(name: $name, genre: $genre, release: $release, artistId: $artistId){
+            name
+            id
+        }
+    }
+`;
+
+export { ARTISTS_QUERY, ALBUMS_QUERY, ADD_ALBUM };

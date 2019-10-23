@@ -1,7 +1,10 @@
 import React from 'react';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
-import AlbumList from './components/album-list/albumList';
+import AlbumList from './components/album-list/AlbumList';
+import AlbumForm from './components/album-form/AlbumForm';
+import './App.scss'
+
 
 const client = new ApolloClient({
   uri: 'http://localhost:4000/graphql',
@@ -9,8 +12,9 @@ const client = new ApolloClient({
 
 const App = () => (
   <ApolloProvider client={client}>
-    <div>
+    <div className="container">
       <h1>Apollo</h1>
+      <AlbumForm />
       <AlbumList />
     </div>
   </ApolloProvider>
