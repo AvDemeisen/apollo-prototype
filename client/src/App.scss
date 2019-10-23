@@ -1,0 +1,8 @@
+@import './styles/mixins';
+@import './styles/breakpoints';
+
+.container {
+    margin: 0 auto;
+    width: calc(100% - 40px);
+    max-width: 650px;
+}

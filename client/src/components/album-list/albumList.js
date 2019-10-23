@@ -1,6 +1,6 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
-import { BOOKS_QUERY } from '../../queries/queries'
+import { ALBUMS_QUERY } from '../../queries/Queries'
 
 const AlbumList = () => (
   <div>
@@ -10,7 +10,7 @@ const AlbumList = () => (
 )
 
 const Albums = () => {
-  const { loading, error, data } = useQuery(BOOKS_QUERY);
+  const { loading, error, data } = useQuery(ALBUMS_QUERY);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
