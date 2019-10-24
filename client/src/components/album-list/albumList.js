@@ -1,6 +1,6 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
-import { ALBUMS_QUERY } from '../../queries/Queries'
+import { ALBUMS_QUERY } from "../../queries/queries"
 
 const AlbumList = () => (
   <div>

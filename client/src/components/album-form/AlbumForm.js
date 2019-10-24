@@ -2,7 +2,7 @@ import React from "react";
 import useForm from "../../hooks/Hooks";
 import Input from "../input/Input";
 import Select from "../select/Select";
-import { ARTISTS_QUERY, ADD_ALBUM, ALBUMS_QUERY } from "../../queries/Queries";
+import { ARTISTS_QUERY, ADD_ALBUM, ALBUMS_QUERY } from "../../queries/queries";
 import { useMutation } from '@apollo/react-hooks';
 
 import "./AlbumForm.scss";
