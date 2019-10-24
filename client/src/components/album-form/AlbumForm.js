@@ -12,11 +12,12 @@ const AlbumForm = () => {
   const [addTodo] = useMutation(ADD_ALBUM);
 
   function addAlbum() {
+
     addTodo({ variables: { 
       name: values.albumName,
-      release: values.releaseYear,
+      release: 2012,
       genre: values.genre,
-      authorId: values.authorId
+      artistId: values.artistId
      },
      refetchQueries: [{ query: ALBUMS_QUERY }]
      });
@@ -26,16 +27,16 @@ const AlbumForm = () => {
   return (
     <form className="form" onSubmit={handleSubmit}>
       <div className="form-field form-field--major">
-        <Input type="text" change={handleChange} name="albumName" label="Album Name" value={values.albumName} />
+        <Input type="text" change={handleChange} name="albumName" label="Album Name"/>
       </div>
       <div className="form-field form-field--minor">
-        <Input type="number" change={handleChange} name="releaseYear" label="Release Year" value={values.releaseYear} />
+        <Input type="number" change={handleChange} name="releaseYear" label="Release Year"/>
       </div>
       <div className="form-field">
-        <Input type="text" change={handleChange} name="genre" label="Genre" value={values.genre} />
+        <Input type="text" change={handleChange} name="genre" label="Genre" />
       </div>
       <div className="form-field">
-        <Select change={handleChange} name="authorId" query={ARTISTS_QUERY} />
+        <Select change={handleChange} name="artistId" query={ARTISTS_QUERY} />
       </div>
       <button className="submit-button" type="submit">
         ADD ALBUM

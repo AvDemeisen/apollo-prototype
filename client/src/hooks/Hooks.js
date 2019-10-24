@@ -9,10 +9,10 @@ const useForm = (callback) => {
       callback();
   };
 
-  const handleChange = (event) => {
-    event.persist();
-    setValues(values => ({ ...values, [event.target.name]: event.target.value }));
-  };
+  const handleChange = (e) => setValues({
+    ...values,
+    [e.currentTarget.name]: e.currentTarget.value
+  })
 
   return {
     handleChange,

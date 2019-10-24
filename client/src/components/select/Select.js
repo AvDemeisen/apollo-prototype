@@ -6,7 +6,7 @@ const Select = ({ change, name, query }) => {
 	return (
 		<div className="select-wrapper">
 			<select className="select-dropdown" onChange={change} name={name} >
-				<option className="select-dropdown__default" >Select author</option>
+				<option className="select-dropdown__default">Select Artist</option>
 				<Options query={query} />
 			</select>
 		</div>
