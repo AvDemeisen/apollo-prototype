@@ -21,7 +21,7 @@ const ALBUMS_QUERY = gql`
 `;
 
 const ADD_ALBUM = gql`
-    mutation AddAlbum($name: String!, $genre: String!, $release: Number!, $artistId: ID!){
+    mutation AddAlbum($name: String!, $release: Int!, $genre: String!,  $artistId: ID!){
         addAlbum(name: $name, genre: $genre, release: $release, artistId: $artistId){
             name
             id

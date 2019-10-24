@@ -1,7 +1,7 @@
 import React from "react";
 import "./Input.scss";
 
-const Input = ({ type, change, name, label, value }) => {
+const Input = ({ type, change, name, label }) => {
   const focusInput = e => {
     const parent = e.target.parentNode
     parent.querySelector('.input__label').classList.add('active')
@@ -20,7 +20,6 @@ const Input = ({ type, change, name, label, value }) => {
           type={type}
           name={name}
           onChange={change}
-          value={value}
           onFocus={focusInput}
           onBlur={blurInput}
           required
