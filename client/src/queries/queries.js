@@ -13,6 +13,7 @@ const ALBUMS_QUERY = gql`
     {
         albums {
             name
+            id
             artist {
                 name
             }
@@ -29,4 +30,22 @@ const ADD_ALBUM = gql`
     }
 `;
 
-export { ARTISTS_QUERY, ALBUMS_QUERY, ADD_ALBUM };
+const ALBUM_QUERY = gql`
+        query GetAlbum($id: ID){
+        album(id: $id) {
+            id
+            name
+            genre
+            artist {
+                id
+                name
+                albums {
+                    name
+                    id
+                }
+            }
+        }
+    }
+`
+
+export { ARTISTS_QUERY, ALBUMS_QUERY, ADD_ALBUM, ALBUM_QUERY };
