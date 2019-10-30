@@ -1,0 +1,9 @@
+.album-row {
+    display: flex;
+    margin-bottom: 5px;
+    justify-content: space-between;
+
+    &__text {
+        margin: 0;
+    }
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
-import AlbumList from './components/album-list/albumList';
+import AlbumList from './components/album-list/AlbumList';
 import AlbumForm from './components/album-form/AlbumForm'
 import './App.scss'
 
@@ -19,7 +19,5 @@ const App = () => (
     </div>
   </ApolloProvider>
 );
-
-
 
 export default App;

@@ -1,6 +1,8 @@
-import React from 'react';
-import { useQuery } from '@apollo/react-hooks';
-import { ALBUMS_QUERY } from "../../queries/queries"
+import React, { useState } from 'react'
+import { useQuery } from '@apollo/react-hooks'
+import { ALBUMS_QUERY } from '../../queries/queries'
+import AlbumPanel from '../album-panel/AlbumPanel'
+import './AlbumList.scss'
 
 const AlbumList = () => (
   <div>
@@ -10,16 +12,21 @@ const AlbumList = () => (
 )
 
 const Albums = () => {
-  const { loading, error, data } = useQuery(ALBUMS_QUERY);
+  const [album, setAlbum] = useState()
+	const { loading, error, data } = useQuery(ALBUMS_QUERY);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error :(</p>;
-
-  return data.albums.map(({ name, artist }) => (
-    <div key={name}>
-		<span>{name}</span>
-    <span>{artist.name}</span>
+  return loading ? <Loading /> : error ? <Error /> : data.albums.map(({ id, name, artist }) =>
+    <div key={id}>
+      <li className='album-row' onClick={() => setAlbum(album !== id ? id : '')}>
+        <p className='album-row__text'>{name}</p>
+        <p className='album-row__text'>{artist.name}</p>
+      </li>
+      {album && album === id ? <AlbumPanel selectedAlbum={album} /> : null}
     </div>
-  ));
+  )
 }
+
+const Loading = () => <div>loading</div>
+const Error = () => <div>error</div>
+
 export default AlbumList
